@@ -1,0 +1,5 @@
+{% if messages %}
+  {% for msg in messages %}
+    <strong>{{msg.tags|title}} : {{msg}}</strong>
+  {% endfor %}
+{% endif %}

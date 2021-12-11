@@ -1,0 +1,190 @@
+title{
+    font-size:15vw;
+    color:blue;
+}
+/* h1{
+    color:blue;
+    background-color:yellow;
+     font-size:4vw;
+} */
+.container{
+    width:80%;
+    margin:auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+ }
+
+ .light-background{
+   /* light-blue*/
+    background-color: #CAF1DE;
+
+
+ }
+ .center{
+    width:80%;
+    margin:auto;
+ }
+
+ .center label{
+    float:left;
+    width:15vw;
+    font-size:2vw;
+ }
+
+ .center input{
+    width:20vw;
+    font-size:2vw;
+ }
+.round-btn{
+    width:35vw;
+    background-color:orange;
+    border-radius:10px;
+
+}
+*{
+    box-sizing:border-box;
+
+}
+.left{
+    float:left;
+    width:20%;
+    text-align:center;
+}
+
+.middle{
+    float:left;
+    width:60%;
+    text-align:center;
+}
+.right{
+    float:left;
+    width:20%;
+    text-align:center;
+}
+
+.header-blue{
+    background-color:blue;
+    color:white;
+    position: sticky;
+    top:0px;
+    max-height: 3%;
+}
+
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  .left, .middle, .right {
+    width: 100%;
+    }
+    }
+
+.small-icon{
+    width:80px;
+    height:50px;
+}
+
+nav li{
+    display:inline;
+}
+nav ul{
+    display:inline;
+    list-style-type:none;
+    padding:10px 5px 10px 5px;
+    margin:20px;
+    align-items: center;
+}
+
+.yell-top{
+    text-align: center;
+    padding : 20px 10px 20px 10px; 
+    font-size: 18px;
+    height: 50px;
+    background-color:rgb(247, 247, 240);
+}
+
+
+
+
+
+nav a{
+    color: white;
+    text-decoration: none;
+    margin:0px 10px 0px 10px;
+}
+
+.right-align {
+    float: right;
+
+}
+
+.wide-80{
+    width: 80%;
+}
+
+
+/* index css */
+.grey{
+    background-color: dimgrey;
+    margin:20px;
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;
+    color: white;
+}
+
+.center-div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    margin:1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wide{
+    width: 100%;
+    margin: .5em  .1em;
+    font-size: 1em;
+    
+}
+
+.height{
+    height: calc(2rem + 2px);
+    border-radius: .5em; 
+    line-height: 1.5rem; 
+    
+}                  
+
+.first-row, .second-row,  .third-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    width: 100%;
+    height: 3em;
+    margin-left: .1em;
+    margin-right: .2em;
+}
+
+.diff{
+    width: 100%;
+
+}
+.col{
+   width: 33.3%;
+   padding: .1em .25em;
+}
+.col-50{
+    width: 50%;
+    padding: .1em .25em;
+}
+.light-grey{
+    color:#DCDCDC;
+}
+
+.full-len{
+    width: 100%;
+    margin: .3em .25em;
+    border-radius: 5rem;
+}

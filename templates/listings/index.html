@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    |Home
+{% endblock %}
+{% block content%}
+    <div class="container grey">
+        <h1 class="center">Property Searching Just Got So Easy</h1>
+        <p class="center"> ipsum dolor sit amet consectetur adipisicing elit. Cum, nesciunt! Recusandae perferendis voluptate, mollitia ipsa aliquam dolorem veniam ut consequuntur odio aperiam veritatis nisi maxime odit voluptatibus ducimus atque harum.</p>
+        <form action="{% url 'listing:index' %}">
+            {% csrf_token %}
+            <div class="center-div">  
+                <div class="first-row">
+                    <div class="col">
+                        <input class="wide height" type="text" name="keyword" value="" placeholder="Keywords(Pool, Garage etc)">
+                    </div>
+                    <div class="col">
+                        <input class="wide height" type="text" name ="city" value="" placeholder="City">
+                    </div>
+                    <div class="col">
+                        <select class="wide height diff" name="state" id="">
+                            <option class="light-grey" selected="True" disabled="True">State(ALL)</option>
+                            {% for key,value in  state_choices.items %}
+                                <option value="{{ key }}"
+                                    {% if  key  ==  values.state %}
+                                        selected
+                                    {%endif%}
+                                 >{{value}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+                </div>
+                <!-- second row -->
+                <div class="second-row">
+                    <div class="col-50">
+                        <select class="wide height" name="bedroom" id="">
+                            <option selected="True" disabled="True">Bedrooms</option>
+                            {% for key,value in  bedroom_choices.items %}
+                                <option value="{{ key }}"
+                                    {% if  key  ==  values.bedroom %}
+                                        selected
+                                    {%endif%}
+                                 >{{value}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+                    <div class="col-50">
+                        <select class="wide height" name="maxprice" id="">
+                            <option selected="True" disabled="True">Max Price(Any)</option>
+                            {% for key,value in  price_choices.items %}
+                                <option value="{{ key }}"
+                                    {% if  key  ==  values.maxprice %}
+                                        selected
+                                    {%endif%}
+                                 >{{value}}</option>
+                            {% endfor%}
+                        </select>
+                    </div>
+                </div>
+               
+                 <!-- Third row -->
+                <div class="third-row">
+                    <input class="full-len" type="submit" value="Submit">
+                </div>
+            </div>
+        </form>
+        {% if listings %}
+            {% for l in listings %}
+                <div>
+                    <div>
+                        <img src="{% static '{{ l.photo_main }}' %}" alt="Main photo">
+                    </div>
+                    <div>
+                        <p>{{ l.title }}</p>
+                        <p>{{l.address}} </p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-warehouse"> {{l.sqft}}</i>>
+                        <i class="fa-solid fa-garage-open">{{l.garage}}</i>
+                        <i class="fa-solid fa-bed"> Bedrooms: {{l.bedrooms}}</i>
+                        <i class="fa-solid fa-restroom"> Bathrooms: {{l.bathrooms}}</i>
+                    </div>
+                    
+                    
+                </div>
+                <br>
+                {{l.realtor}}
+                {{l.date_published}}
+               <hr>
+               <a href="{% url 'listing:index' %}">More Info</a>
+            {% endfor %}
+            {% endif %}
+            
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+
+<div class="header-blue">
+    <div class="wide-80">
+      <nav class="container">
+          <a href="{% url 'account:dashboard' %}">
+              <img class="small-icon"  src="{% static 'img/property2.jfif' %}" alt="Property icon">
+          </a>
+          <ul>
+              <li>
+                   <a href="">HOME</a>
+              </li>
+              <li>
+                  <a href="">ABOUT</a>
+              </li>
+              <li>
+                  <a href="">FEATURED LISTINGS</a>
+              </li>
+          </ul>
+
+          <ul class="right-align">
+              <li>
+                  <i class="fas fa-user-plus"></i>
+                  <a href="{% url 'account:register' %}">Register</a>
+              </li>
+              <li>
+                  <i class="fas fa-sign-in-alt"></i>
+                  <a href="{% url 'account:login' %}">Login</a>
+              </li>
+          </ul>
+
+
+
+      </nav>
+    </div>
+      
+  </div>
